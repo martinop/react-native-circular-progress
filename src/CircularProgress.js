@@ -9,6 +9,7 @@ export default class CircularProgress extends React.PureComponent {
     return {
       x: centerX + radius * Math.cos(angleInRadians),
       y: centerY + radius * Math.sin(angleInRadians),
+      angleInDegrees,
     };
   }
 
@@ -74,17 +75,15 @@ export default class CircularProgress extends React.PureComponent {
     const offset = size - maxWidthCircle * 2;
 
     const localChildrenContainerStyle = {
-      ...{
-        position: 'absolute',
-        left: maxWidthCircle + padding / 2,
-        top: maxWidthCircle + padding / 2,
-        width: offset,
-        height: offset,
-        borderRadius: offset / 2,
-        alignItems: 'center',
-        justifyContent: 'center',
-        overflow: 'hidden',
-      },
+      position: 'absolute',
+      left: maxWidthCircle + padding / 2,
+      top: maxWidthCircle + padding / 2,
+      width: offset,
+      height: offset,
+      borderRadius: offset / 2,
+      alignItems: 'center',
+      justifyContent: 'center',
+      overflow: 'hidden',
       ...childrenContainerStyle,
     }
 
